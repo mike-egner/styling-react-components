@@ -1,5 +1,11 @@
-import React from 'react'
+import React from "react";
+import styleable from "react-styleable";
+import css from "./frame.module.css";
 
-export default function Frame({ children }) {
-  return <div>{children}</div>
+function Frame({ children, css }) {
+  return <div className={css.root}>{children}</div>;
 }
+
+// css is passed in (above) by styleable, below.
+
+export default styleable(css)(Frame);
